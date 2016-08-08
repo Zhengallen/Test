@@ -6,19 +6,7 @@
 //  Copyright (c) 2015年 GSD. All rights reserved.
 //
 
-#import "NSData+SDDataCache.h"
-#import <CommonCrypto/CommonDigest.h>
-
-#define kSDMaxCacheFileAmount 100
-
-@implementation NSData (SDDataCache)
-
-+ (NSString *)cachePath
-{
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
-    path = [path stringByAppendingPathComponent:@"Caches"];
-    path = [path stringByAppendingPathComponent:@"SDDataCache"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+#importer] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return path;
